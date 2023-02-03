@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        html 5: todos los documentos empiezan con
+        <!DOCTYPE html>
+
+        y todo el código HTML que hagamos deberá ir entre las etiquetas
+        <html></html>        
+    -->
+
+    <!--estructura dividida en head, body y foot-->
+<head><!--head-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--El título es la ´´unica parte visible dentro del head, lo veremos en la pestaña del navegador,
+        todo dentro del head forma parte de la metadata del archivo-->
+    <title>Elementos y estructura HTML</title>    
+</head>
+<body><!--body-->
+    <p>Enlaces a demás apuntes de html<br></p>
+    <a href="./01_elements_structure.html">Elements and Structure</a><!--esta misma página-->
+    <!--comando &nbsp; lo usamos para añadir espacios, puede ir dentro de un tag de texto o fuera-->
+    &nbsp;&nbsp;
+    <a href="./02_tables.html">Tables</a>
+    &nbsp;&nbsp;
+    <a href="./03_forms.html">Forms</a>
+    <nav>
+    <!--el apartado nav es un contenedor para enlaces de navegación, que se supone proveen formas de acceder
+    a las secciones del sitio web, así como a documentos externos.
+    Es útil ordenar en una ul el contenido de nav-->
+        <p>Enlaces a apartados dentro de esta misma página</p>
+        <ul>
+            <!--enlaces dentro de la misma página, la href="#id" have referencia al identificativo de los divisores y nos lleva a ellos-->
+            <li><a href="#tipotexto">Tipos de texto</a></li>
+            <li><a href="#ejemplo_oso">Span y styling text con el ejemplo del oso</a></li>
+            <li><a href="#listas">Hacer listas numeradas y no numeradas</a></li>
+            <li><a href="#imagenyvideo">Enlazar imagenes y videos</a></li>
+            <li><a href="#enlaces">Repaso de enlaces y sus etiquetas</a></li>
+        </ul>
+    </nav>
+    <!--La estructura puede dividirse a su vez con divisores dentro del body, esto ayuda a agrupar
+    el contenido de mejor manera, div divide la pagina en secciones-->
+    <!--Los divisores pueden tener atributos que los identifiquen, estos atributos nos valen para  darles un
+    nombre útil para localizar y darle estilos si es necesario en CSS-->
+    <div id="tipotexto">
+        <h2>Tipos de texto</h2>
+        <!--paragraph tag, opening y closing tags-->
+        <p>esto es un parrafo</p>
+        <!--headings, sirve para textos de mayor tamaño a los del parrafo, organizar el texto, aparecen en negrita por defecto-->
+        <h1>H1 es el más grande, lo suyo es que solo haya uno en la página</h1>
+        <h2>H2 es más peque y así descendiendo hasta h6</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <br>
+    </div>
+    <div id="ejemplo_oso">
+        <h2>Span y styling text con el ejemplo del oso</h2>
+        <!--span, contiene una pequeña pieza de texto u otro html, usamos span para separar
+            en pequeñas piezas el contenido dentro de p en la misma linea que el resto de contenido-->
+        <p>
+        The brown bear (Ursus arctos) is native to parts of northern Eurasia
+        and North America. Its conservation status is currently Least Concern. There are many subspecies within the brown
+        bear species, including the <span>Atlas bear</span> and the Himalayan brown bear.
+        </p>
+        <!--Styling text
+        cursiva o enfasis con la etiqueta em
+        negrita o enfatizar+dar impportancia strong
+        negrita solo visualmente b
+        -->
+
+        <p>The brown bear <em>(Ursus arctos)</em> is native to parts of northern Eurasia and North America. Its conservation
+            status is currently <strong>Least Concern</strong>. There are many subspecies within the brown bear species, including
+            the <b>Atlas bear</b> and the Himalayan brown bear.
+        <br><!--br nos hace un salto de linea-->
+        Ejemplos de listas con nombres de osos y países con osos:            
+        </p>
+    </div>
+    <div id="listas">
+        <h2>Listas numeradas y no numeradas</h2>
+    <!--listas no numeradas unordered list-->
+        <ul>
+            <li>Arctos</li>
+            <li>Collarus</li>
+            <li>Horribilis</li>
+            <li>Nelsoni(extinct)</li>
+          </ul>
+    <!--listas numeradas ordered list-->
+        <ol>
+            <li>Russia</li>
+            <li>United States</li>
+            <li>Canada</li>
+        </ol>
+        <br>
+    <!--las listas pueden ir dentro de otras listas-->
+    </div>
+    <div id="imagenyvideo">
+        <h2>Enlazar imagenes y videos</h2>
+        <!--Enlazar imágenes:
+        <img src="http://www.enlace.com o fuente archivo" alt="informacion no visualizable por el usuario" weight="n" height="m"/>
+        siendo width (ancho) y height (alto), especifican las dimensiones de la imagen, si no se ponen se pondra su dimension por defecto
+        -->
+        <img src="https://content.codecademy.com/courses/web-101/web101-image_brownbear.jpg" alt width="320" height="300"/>
+        <!--Enlazar vídeos:
+        <video src="http://www.enlace.com o fuente archivo" width="320" height="240" controls>
+            video not supported
+        </video>
+
+        siendo width (ancho) y height (alto) especifican las dimensiones del video
+        y controls da instrucciones al navegador de que incluya los controles básicos de vídeo como pausar y prender
+        El texto entre las etiquetas de opening y closing video (video not supported) será solo mostrado se el navegador no puede abrir el video
+        -->
+        <video src="https://content.codecademy.com/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" width="320" height="260" controls>
+            El video no funciona o video not supported
+        </video>
+        <br>
+    </div>
+    <div id="enlaces">
+        <h2>Repaso de enlaces y sus etiquetas</h2>
+        <!--Los enlaces de ponen con el tag <a href="http://www.enlace.com">Texto que enlaza</a>-->
+        <!--enlace a una página externa, si le añadimos el atributo target con el valor _blank el enlace se abrirá en una nueva ventana-->
+        <a href="https://www.codecademy.com/learn/learn-html" target="_blank">Enlace al cursillo de html de codecademy</a>
+        <br>
+        <!--enlace a una página mediante una imagen o algo similar en vez de un texto, enlace a codecademy a partir de su logo-->
+        <a href="https://www.codecademy.com/learn/learn-html" target="_blank"><img src="https://images.codecademy.com/social/logo-codecademy-social.png" alt="logo de codecademy" width="320" height="240"/></a>
+        <br>
+        <!--enlace dentro de la misma página mediante el identificador de div, podemos enlazarlo con cualquier tag que tenga como id el valor al que hagamos referencia, no solo los div-->
+        <a href="#tipotexto">Tipos de texto</a>
+        <br>
+        <!--enlace a una página externa dentro de nuestro proyecto actual que son los apuntes, de abrira en una pagina a parte, han de estar ambos archivos en la misma carpeta-->
+        <a href="./02_tables.html" target="_blank">Enlace a los apuntes de tablas</a>
+        <br> 
+    </div>
+</body>
+</html>

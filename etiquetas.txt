@@ -1,0 +1,2 @@
+etiquetas que van guay
+alt:		<img src="url" alt="etiqueta informativa">	va bien para añadir info no visible pasa el usuario

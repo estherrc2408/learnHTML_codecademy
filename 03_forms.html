@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios en HTML</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <!--El formulario es un elemento muy util para que el usuario interactue con la web-->
+    <!--
+        <form action="./ejemplo.html" method="POST">
+            <p>contenido del formulario</p>
+        </form>
+    action: atributo que determina donde se envia la informacion introducida por el usuario
+    method: atributo incluido en la solicitud
+    contenido: los formularios pueden tener contenido dentro para especificar al usuario qué se le pide, por ejemplo
+    -->
+    <form action="./apuntes.html" method="post"><!--en realidad el action está llevando los datos a ninguna parte, pero solo porque esto es un ejemplo-->
+        <p>este formulario te pide el nombre, escríbelo:<br></p>
+        <!--el tag label muestra un texto que podemos asociar al input mediante la etiqueta id-->
+        <!--
+            <label for="id asociado">contenido</label>
+        for="" : entre las comillas escribimos el identificador del input al que queramos asociarlo
+        -->
+        <label for="nombre">Tu nombre?</label>
+        <br>
+        <!--el input se abre y cierra sobre sí mismo, crea un cuadro para que el usuario escriba-->
+        <!--
+            <input type="text" name="texto_uno" value="texto_predeterminado" id="identificador">
+        type: tipo de informacion admitida por el input
+        name: nombre del input
+        value: el input puede ir con un relleno por defecto, competamente opcional
+        id: identificador
+
+        al clickar el texto del label estaremos clickando también el input, dado que con el for="id" se enlazan
+        -->
+        <input type="text" name="input_nombre" id="nombre">
+        <p><br>Asumamos que te apellidas Pérez, si no cámbialo<br></p>
+        <label for="apellido">Apellido?</label>
+        <br>
+        <input type="text" name="input_apellido" value="Pérez" id="apellido">
+        <br>
+        <!--Password input, input de información no visible al usuario, lo único que cambia es que el type="password"-->
+        <p>Ahora tienes que introducir tu contraseña<br></p>
+        <label for="contrasena">Cual es tu contraseña?</label>
+        <br>
+        <input type="password" name="input_contrasena" id="contrasena">
+        <!--la informacion quedara guardada dentro del archivo destino del formulario como contrasena=contrasenausuario-->
+        <br>
+        <!--Number input, input de información numérica y algunos caracteres especiales como -,+,. dentro de él-->
+        <label for="tlf">Numero de telefono?</label>
+        <br>
+        <input type="number" name="input_tlf" id="tlf">
+        <br>
+        <label for="step">prueba de step</label>
+        <!--etiqueta step dentro del input, presenta una flecha al lado donde el usuario puede cambiar de numero-->
+        <br>
+        <input type="number" name="input_step" id="step" step="1"><!--al poner step="1" el usuario al usar las flechas dará saltos de 1 numero arriba o abajo-->
+        <!--Range input dar tan solo un rango de valores en el input, type="range" min="" max="" step=""-->
+        <br>
+        <label for="nota">Pon un grado de satisfaccion</label>
+        <br>
+        <input type="range" name="input_nota" id="nota" min="0" max="10" step="1">
+        <br>
+        <!--Checkbox Input, muestra cajitas que el usuario puede seleccionar, type="checkbox y value igual al id del input, al ser sobre lo mismo lo suyo es que concidieran en name, aquí es muy importante el label"-->
+        <p>Choose your pizza toppings:</p>
+        <label for="cheese">Extra cheese</label>
+        <input id="cheese" name="topping" type="checkbox" value="cheese">
+        <br>
+        <label for="pepperoni">Pepperoni</label>
+        <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+        <br>
+        <label for="anchovy">Anchovy</label>
+        <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+    </form>
+</body>
+</html>

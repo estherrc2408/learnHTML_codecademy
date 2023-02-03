@@ -1,0 +1,2 @@
+¿es correcto usar el comando &nbsp; para añadir espacios entre lo que sea o está feo?
+diferencias entre etiquetas name e id? (buscar)

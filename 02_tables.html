@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas en HTML</title>
+</head>
+<body>
+    <p>Enlaces a demás apuntes de html<br></p>
+    <a href="./01_elements_structure.html">Elements and Structure</a>
+    &nbsp;&nbsp;
+    <a href="./02_tables.html">Tables</a><!--esta misma página-->
+    &nbsp;&nbsp;
+    <a href="./03_forms.html">Forms</a>
+
+    <!--Elemento tabla y todos sus elementos descendentes-->
+    <h2>Tabla 1</h2>
+    <p>Súper básica. Sin cabecera y de dimensión 4*3 (filas*columnas)</p>
+    <table><!--Opening table-->
+        <tr><!--row1-->
+            <td>(1,1) fila 1 columna 1</td>
+            <td>(1,2) fila 1 columna 2</td>
+            <td>(1,3) fila 1 columna 3</td>
+        </tr>
+        <tr><!--row2-->
+            <td>(2,1) fila 2 columna 1</td>
+            <td>(2,2) fila 2 columna 2</td>
+            <td>(2,3) fila 2 columna 3</td>
+        </tr>
+        <tr><!--row3-->
+            <td>(3,1) fila 3 columna 1</td>
+            <td>(3,2) fila 3 columna 2</td>
+            <td>(3,3) fila 3 columna 3</td>
+        </tr>
+        <tr><!--row4-->
+            <td>(4,1) fila 4 columna 1</td>
+            <td>(4,2) fila 4 columna 2</td>
+            <td>(4,3) fila 4 columna 3</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Tabla 2</h2>
+    <p>Menos básica, con cabecera y uso de scope en filas y columnas 4*4 + borde</p>
+    <table border="1"><!--Opening table-->
+    <!--puede incluirse borde así aunque es una forma anticuada de hacerlo, para poner borde con características especiales lo mejor es hacerlo con CSS-->
+        <!--FORMA DE AÑADIRLO EN CSS:
+         table, th, td {
+                    border: 1px solid black;
+                    }   
+        -->
+        <thead><!--Cabecera de la tabla, contiene la primera fila-->       
+            <tr><!--row 1-->
+                <th></th><!--el primer espacio queda vacío-->
+                <!--dentro del tag th el atributo scope puede tomar los valores col o row-->
+                <th scope="col">columna 1</th>
+                <th scope="col">columna 2</th>
+                <th scope="col">columna 3</th>
+            </tr>
+        </thead> 
+        <tr><!--row2-->
+            <!--los th con atributo scope="row" van fuera del head-->
+            <th scope="row">fila 1</th>
+            <td>(1,1)</td>
+            <td>(1,2)</td>
+            <td>(1,3)</td>
+        </tr>
+        <tr><!--row3-->
+            <th scope="row">fila 2</th>
+            <td>(2,1)</td>
+            <td>(2,2)</td>
+            <td>(2,3)</td>
+        </tr>
+        <tr><!--row4-->
+            <th scope="row">fila 3</th>
+            <td>(3,1)</td>
+            <td>(3,2)</td>
+            <td>(3,3)</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Tabla 3</h2>
+    <p>Tabla con cabecera, celdas combinadas con uso de span dimensión 4*5</p>
+    <table border="1">
+        <!--puede incluirse borde así aunque es una forma anticuada de hacerlo, para poner borde con características especiales lo mejor es hacerlo con CSS-->
+        <!--FORMA DE AÑADIRLO EN CSS:
+         table, th, td {
+                    border: 1px solid black;
+                    }   
+        -->
+        <thead><!--cabecera de la tabla, los th van contenidos en él, contiene las filas, tr es descendente de thead-->
+            <tr><!--row1-->
+                <th colspan="8">Dias de la semana</th>
+            </tr>
+            <tr><!--row2-->
+                <th></th>
+                <th scope="col" colspan="5">Entresemana</th>
+                <th scope="col" colspan="2">Fin de semana</th>
+            </tr>
+        </thead>
+        <tbody><!--cuerpo de la tabla, contiene todos los datos td de la tabla, salvo los th-->
+        <tr><!--row3-->
+            <th scope="row">Nombre de los dias</th>
+            <td>Lunes</td>
+            <td>Martes</td>
+            <td>Miércoles</td>
+            <td>Jueves</td>
+            <td>Viernes</td>
+            <td>Sábado</td>
+            <td>Domingo</td>
+        </tr>
+        <tr><!--row4-->
+            <th scope="row" rowspan="2">Horas trabajadas arriba<br>dormidas abajo</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>10</td>
+            <td>10</td>
+        </tr>
+        <tr><!--row5-->
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        </tbody>
+        <tfoot><!--Pie de la tabla, suele contener sumas, diferencias u otros resultados-->
+            <th scope="row">Recuento</th>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+        </tfoot>
+    </table>
+    <!--Styling con CSS, estructura típica:
+        table, th, td {
+                        border: 1px solid black;
+                        font-family: Arial, sans-serif;
+                        text-align: center;
+                    }
+    -->
+</body>
+</html>
