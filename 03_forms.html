@@ -7,6 +7,24 @@
     <title>Formularios en HTML</title>
 </head>
 <body>
+    <header>
+    <p>Enlaces a demás apuntes de html<br></p>
+    <a href="./01_elements_structure.html">Elements and Structure</a>
+    <!--comando &nbsp; lo usamos para añadir espacios, puede ir dentro de un tag de texto o fuera-->
+    &nbsp;&nbsp;
+    <a href="./02_tables.html">Tables</a>
+    &nbsp;&nbsp;
+    <a href="./03_forms.html">Forms</a><!--esta misma página-->
+    <br>
+    <nav>
+        <p>Enlaces a apartados dentro de esta misma página</p>
+        <ul>
+            <!--enlaces dentro de la misma página, la href="#id" have referencia al identificativo de los divisores y nos lleva a ellos-->
+            <li><a href="#formbasico">Forms</a></li>
+            <li><a href="#validation">Introduction to HTML validation</a></li>
+        </ul>
+    </nav>
+    </header>
     <h1>Formularios</h1>
     <!--El formulario es un elemento muy util para que el usuario interactue con la web-->
     <!--
@@ -17,63 +35,170 @@
     method: atributo incluido en la solicitud
     contenido: los formularios pueden tener contenido dentro para especificar al usuario qué se le pide, por ejemplo
     -->
-    <form action="./apuntes.html" method="post"><!--en realidad el action está llevando los datos a ninguna parte, pero solo porque esto es un ejemplo-->
-        <p>este formulario te pide el nombre, escríbelo:<br></p>
-        <!--el tag label muestra un texto que podemos asociar al input mediante la etiqueta id-->
-        <!--
-            <label for="id asociado">contenido</label>
-        for="" : entre las comillas escribimos el identificador del input al que queramos asociarlo
-        -->
-        <label for="nombre">Tu nombre?</label>
-        <br>
-        <!--el input se abre y cierra sobre sí mismo, crea un cuadro para que el usuario escriba-->
-        <!--
-            <input type="text" name="texto_uno" value="texto_predeterminado" id="identificador">
-        type: tipo de informacion admitida por el input
-        name: nombre del input
-        value: el input puede ir con un relleno por defecto, competamente opcional
-        id: identificador
+    <div id="formbasico">
+        <form action="./apuntes.html" method="post"><!--en realidad el action está llevando los datos a ninguna parte, pero solo porque esto es un ejemplo-->
+            <section class="input_nombreapellido">
+                <p>este formulario te pide el nombre, escríbelo:<br></p>
+                <!--el tag label muestra un texto que podemos asociar al input mediante la etiqueta id-->
+                <!--
+                    <label for="id asociado">contenido</label>
+                for="" : entre las comillas escribimos el identificador del input al que queramos asociarlo
+                -->
+                <label for="nombre">Tu nombre?</label>
+                <br>
+                <!--el input se abre y cierra sobre sí mismo, crea un cuadro para que el usuario escriba-->
+                <!--
+                    <input type="text" name="texto_uno" value="texto_predeterminado" id="identificador">
+                type: tipo de informacion admitida por el input
+                name: nombre del input
+                value: el input puede ir con un relleno por defecto, competamente opcional
+                id: identificador
 
-        al clickar el texto del label estaremos clickando también el input, dado que con el for="id" se enlazan
-        -->
-        <input type="text" name="input_nombre" id="nombre">
-        <p><br>Asumamos que te apellidas Pérez, si no cámbialo<br></p>
-        <label for="apellido">Apellido?</label>
-        <br>
-        <input type="text" name="input_apellido" value="Pérez" id="apellido">
-        <br>
-        <!--Password input, input de información no visible al usuario, lo único que cambia es que el type="password"-->
-        <p>Ahora tienes que introducir tu contraseña<br></p>
-        <label for="contrasena">Cual es tu contraseña?</label>
-        <br>
-        <input type="password" name="input_contrasena" id="contrasena">
-        <!--la informacion quedara guardada dentro del archivo destino del formulario como contrasena=contrasenausuario-->
-        <br>
-        <!--Number input, input de información numérica y algunos caracteres especiales como -,+,. dentro de él-->
-        <label for="tlf">Numero de telefono?</label>
-        <br>
-        <input type="number" name="input_tlf" id="tlf">
-        <br>
-        <label for="step">prueba de step</label>
-        <!--etiqueta step dentro del input, presenta una flecha al lado donde el usuario puede cambiar de numero-->
-        <br>
-        <input type="number" name="input_step" id="step" step="1"><!--al poner step="1" el usuario al usar las flechas dará saltos de 1 numero arriba o abajo-->
-        <!--Range input dar tan solo un rango de valores en el input, type="range" min="" max="" step=""-->
-        <br>
-        <label for="nota">Pon un grado de satisfaccion</label>
-        <br>
-        <input type="range" name="input_nota" id="nota" min="0" max="10" step="1">
-        <br>
-        <!--Checkbox Input, muestra cajitas que el usuario puede seleccionar, type="checkbox y value igual al id del input, al ser sobre lo mismo lo suyo es que concidieran en name, aquí es muy importante el label"-->
-        <p>Choose your pizza toppings:</p>
-        <label for="cheese">Extra cheese</label>
-        <input id="cheese" name="topping" type="checkbox" value="cheese">
-        <br>
-        <label for="pepperoni">Pepperoni</label>
-        <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
-        <br>
-        <label for="anchovy">Anchovy</label>
-        <input id="anchovy" name="topping" type="checkbox" value="anchovy">
-    </form>
+                al clickar el texto del label estaremos clickando también el input, dado que con el for="id" se enlazan
+                -->
+                <input type="text" name="input_nombre" id="nombre">
+                <p><br>Asumamos que te apellidas Pérez, si no cámbialo<br></p>
+                <label for="apellido">Apellido?</label>
+                <br>
+                <input type="text" name="input_apellido" value="Pérez" id="apellido">
+                <br>
+            </section>
+            <section class="input_password">
+                <!--Password input, input de información no visible al usuario, lo único que cambia es que el type="password"-->
+                <p>Ahora tienes que introducir tu contraseña<br></p>
+                <label for="contrasena">Cual es tu contraseña?</label>
+                <br>
+                <input type="password" name="input_contrasena" id="contrasena">
+                <!--la informacion quedara guardada dentro del archivo destino del formulario como contrasena=contrasenausuario-->
+                <br>
+            </section>
+            <section class="input_number">
+                <!--Number input, input de información numérica y algunos caracteres especiales como -,+,. dentro de él-->
+                <label for="tlf">Numero de telefono?</label>
+                <br>
+                <input type="number" name="input_tlf" id="tlf">
+                <br>
+                <label for="step">prueba de step</label>
+                <!--etiqueta step dentro del input, presenta una flecha al lado donde el usuario puede cambiar de numero-->
+                <br>
+                <input type="number" name="input_step" id="step" step="1"><!--al poner step="1" el usuario al usar las flechas dará saltos de 1 numero arriba o abajo-->
+            </section>
+            <section class="input_range">
+                <!--Range input dar tan solo un rango de valores en el input, type="range" min="" max="" step=""-->
+                <br>
+                <label for="nota">Pon un grado de satisfaccion</label>
+                <br>
+                <input type="range" name="input_nota" id="nota" min="0" max="10" step="1">
+                <br>
+            </section>
+            <section class="input_checkpoint">
+                <!--Checkbox Input, muestra cajitas que el usuario puede seleccionar, type="checkbox y value igual al id del input, al ser sobre lo mismo lo suyo es que concidieran en name, aquí es muy importante el label"-->
+                <p>Choose your pizza toppings:</p>
+                <label for="cheese">Extra cheese</label>
+                <input id="cheese" name="topping" type="checkbox" value="cheese">
+                <br>
+                <label for="pepperoni">Pepperoni</label>
+                <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+                <br>
+                <label for="anchovy">Anchovy</label>
+                <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+                <br>
+            </section>
+            <section class="input_radio">
+                <!--Radio Button Input para cuando damos varias opciones pero solo pueden elegir una-->
+                <p>Esto está funcionando?</p>
+                <label for="Si">Si</label>
+                <input id="si" type="radio" name="answer" value="si"><!--type name id value-->
+                <label for="No">No</label>
+                <input id="No" type="radio" name="answer" value="no">
+                <br>
+            </section>
+            <section class="select_ddlist">
+                    <!--Drodown list crea una lista con varias opciones predeterminadas para el usuario-->
+                    <!--En este caso utilizamos el tag select, en el opening de select introducimos el id que asociaremos a label-->
+                <label for="como">Cómo está funcionando?</label>
+                <br>
+                <select id="como" name="select_como"><!--id name-->
+                    <option value="muy_mal">Muy mal</option>
+                    <option value="mal">Mal</option>
+                    <option value="regu">Regular</option>
+                    <option value="bien">Bien</option>
+                    <option value="muy bien">Muy bien</option>
+                    <!--si el usuario elige Regular, se guardará en el formulario como como=regu (id=value)-->
+                    <br>    
+                </select>
+            </section>
+            <section class="input_datalist">
+                <!--Crea una lista de seleccion similar a la de drodown list pero dejando al usuario escribir en el espacio si lo requiere-->
+                <!--estructura: 
+                    <input type="text" list="de lo que sea la lista" name="nombre" id="identificador">
+                    <datalist id="identificador">
+                        <option value="valor1"></option>
+                        <option value="valor2"></option>
+                        <option value="valor3"></option>
+                    </datalist>
+                -->
+                <label for="espana">Vives en la peninsula?</label>
+                <br>
+                <input type="text" id="espana" name="parteespana" list="partes">
+                <datalist id="partes"><!--el id de la datalist ha de coincidir con el valor de list en el input-->
+                    <option value="peninsula"></option>
+                    <option value="baleares"></option>
+                    <option value="canarias"></option>
+                </datalist>
+            </section>
+            <section class="textarea">
+                <!--los elementos textarea crean un area para escribir un texto mas alla que los input que tan solo dejan una linea-->
+                <!--Podemos añadir columnas y filas para dar la dimension que queramos al area de texto-->
+                <label for="texto">Escribe aqui tu opinion sobre lo que sea</label>
+                <br>
+                <textarea id="texto" name="textarea1" rows="7" cols="30">texto predefinido dentro de la textarea, opcional</textarea>
+            </section>
+            <section class="submit">
+                <!--submit enviara el formulario cuando el usuario lo haya rellenado-->
+                <br>
+                <input type="submit" value="enviar">
+            </section>
+        </form>
+    </div>
+    <div id="formvalidation">
+       <form action="./ejemplo2.html" method="post">
+            <br>
+            <h2>Apertura de un nuevo formulario</h2>
+            <section class="requiring_input">
+            <!--Para los input no opcionales, campos de relleno obligatorio debemos añadir la etiqueta required-->
+                <label for="nombre">Rellena tu nombre (campo obligatorio)</label>
+                <br>
+                <input type="text" id="nombre" name="input_nombre" required>
+            </section>
+            <section class="minmax">
+                <!--Para que dentro de los input numericos y de rango exista un numero minimo y un maximo-->
+                <label for="minimomaximo">Pon una nota del 1 al 10</label>
+                <br>
+                <input type="number" id="minimomaximo" name="input_minmax" min="1" max="10">
+                <br>
+                <label for="rgminmax">Ahora igual pero con un input de rango</label>
+                <br>
+                <input type="range" id="rgminmax" name="input_range" min="1" max="10">
+            </section>
+            <section class="check_length">
+                <!--Para establecer la condicion de que dentro de un input haya un numero maximo y/o minimo numero de caracteres-->
+                <br>
+                <label for="checkeo">Escribe tu apellido, no puede tener mas de 9 caracteres, campo obligatorio</label>
+                <br><!--con input de type="number" no funciona-->
+                <input type="text" id="checkeo" name="tlf" minlenght="1" maxlength="9" required>
+            </section>
+            <section class="matchingpattern">
+                <br>
+                <!--pone una condicion que se tiene que cumplir para el envio del formulario, especificando los caracterez validos y el numero que tienen que ser-->
+                <label for="match">Escribe tu nombre de usuario, solo letras y numeros, entre 7 y 10 caracteres</label>
+                <br>
+                <!--condicion de que sean solo numeros y letras ya sean minusculas o mayusculas [a-zA-Z0-9]
+                condicion de que tenga que tener entre 7 y 10 caracteres {7,10} ESTO NO VA-->
+                <input type="text" name="usuario" id="match" required pattern="[a-zA-Z0-9]+">
+                <input type="submit" value="Submit">
+            </section>
+        </form>
+    </div>
 </body>
 </html>
